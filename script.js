@@ -60,9 +60,6 @@ function handleCardClick(event) {
 		targets.push(event.target);
 		selections.push(setColor);
 		count++;
-		console.log(`count is ${count}`);
-		console.log(`the selected spaces are ${selections}`);
-		console.log(`the targets are ${targets}`);
 		if (count === 2) {
 			setTimeout(function() {
 				if (selections[0] !== selections[1]) {
@@ -72,7 +69,6 @@ function handleCardClick(event) {
 				}
 				targets = [];
 				selections = [];
-				console.log('selections cleared');
 			}, 1000);
 			count = 0;
 		}
