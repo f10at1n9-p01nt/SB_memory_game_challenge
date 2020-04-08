@@ -50,10 +50,7 @@ function createDivsForColors(colorArray) {
 	}
 }
 
-// TODO: Implement this function!
 function handleCardClick(event) {
-	// you can use event.target to see which element was clicked
-	// console.log('you just clicked', event.target);
 	setColor = event.target.className;
 	if (count < 2 && event.target.style.backgroundColor === '') {
 		event.target.style.backgroundColor = setColor;
@@ -69,8 +66,9 @@ function handleCardClick(event) {
 				}
 				targets = [];
 				selections = [];
+				//* Bug fix: Moved count reset inside timeout to keep from extra clicks
+				count = 0;
 			}, 1000);
-			count = 0;
 		}
 	}
 }
